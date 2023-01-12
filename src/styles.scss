@@ -10,5 +10,23 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color: #fafafa;
     box-sizing: border-box;
-    
+
+}
+
+form {
+    width: 525px;
+    margin: 0 auto;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+
+}
+
+.input-label{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1em;
 }

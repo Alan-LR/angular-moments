@@ -1,0 +1,18 @@
+<form>
+    <div class="formulario">
+        <mat-form-field appearance="fill">
+            <mat-label>Titulo:</mat-label>
+            <input matInput placeholder="Digite um titulo" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Descrição</mat-label>
+            <textarea matInput placeholder="Descreva este momento" rows="5"></textarea>
+        </mat-form-field>
+        <div class="input-label">
+            <label for="image" style="margin-right: 15px;">Coloque a foto que mais marcou:</label>
+            <input type="file">
+        </div>
+        <button mat-raised-button color="primary" type="submit" value="{{ btnText }}" style="width: 150px; margin: 0 auto;">
+            Compartilhar!</button>
+    </div>
+</form>
