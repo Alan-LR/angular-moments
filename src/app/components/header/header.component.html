@@ -1,8 +1,13 @@
 <p>
-    <mat-toolbar color="primary">
-        <span>Application Moments</span>
+    <mat-toolbar color="primary" class="tamanho">
+        <a routerLink="/" style="color: white; text-decoration: none;" class="ajustar">
+            <span>Application Moments</span>
+            <img class="img" src="/assets/moments.png" alt="Moments" routerLink="/"/>
+        </a>
+        
         <span class="example-spacer"></span>
         <button style="margin-right: 10px;" mat-raised-button routerLink="/">Home</button>
+        <button mat-raised-button routerLink="/moments/new" style="margin-right: 10px;">Compartilhar</button>
         <button mat-raised-button routerLink="/about">Sobre</button>
     </mat-toolbar>
 </p>

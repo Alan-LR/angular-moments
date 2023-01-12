@@ -12,6 +12,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { MatIconModule } from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
+import { NewMomentComponent } from './components/pages/new-moment/new-moment.component';
 
 
 
@@ -21,7 +22,8 @@ import {MatButtonModule} from '@angular/material/button';
     HeaderComponent,
     FooterComponent,
     AboutComponent,
-    HomeComponent
+    HomeComponent,
+    NewMomentComponent
   ],
   imports: [
     BrowserModule,
