@@ -5,5 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class MessageService {
 
+  message: string ='t';
+
   constructor() { }
 }

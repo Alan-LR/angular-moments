@@ -1,0 +1,9 @@
+<div class="message" *ngIf="messageServices.message">
+    <div class="message-header">
+        <h2>Mensagem do sistema:</h2>
+        <button mat-mini-fab color="primary" aria-label="Example icon button with a filter list icon">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <p>{{ messageServices.message }}</p>
+</div>
