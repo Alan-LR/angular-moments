@@ -9,7 +9,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 })
 export class MessagesComponent {
 
-  faTimes = faTimes;
+  faTimes = faTimes; //FavIcon
 
   constructor(public messageServices: MessageService){
 
