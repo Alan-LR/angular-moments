@@ -20,6 +20,20 @@
 <div class="home-container">
     <h1>Veja o que estão compartilhando</h1>
     <!--Form de busca-->
+    <div class="search-container">
+
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <mat-label>Pesquisar</mat-label>
+              <input matInput placeholder="Busque por um momento..." (input)="search($event)">
+              <mat-icon>search</mat-icon>
+            </mat-form-field>
+        </form>
+
+       
+    </div>
+
+    <!---->
     <div *ngIf="moments.length > 0; else noMoments">
         <div class="moments-container">
             <mat-card class="example-card moment" *ngFor="let moment of moments">
