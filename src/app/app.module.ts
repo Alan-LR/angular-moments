@@ -22,6 +22,7 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MomentComponent } from './components/moment/moment.component';
 
 
 
@@ -34,7 +35,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HomeComponent,
     NewMomentComponent,
     MomentFormComponent,
-    MessagesComponent
+    MessagesComponent,
+    MomentComponent
   ],
   imports: [
     BrowserModule,
