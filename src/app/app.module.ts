@@ -20,6 +20,9 @@ import { NewMomentComponent } from './components/pages/new-moment/new-moment.com
 import { AppMaterialModule } from './shared/app-material/app-material.module';
 import { MessagesComponent } from './components/messages/messages.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {MatCardModule} from '@angular/material/card';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 
 @NgModule({
@@ -46,7 +49,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatCardModule,
+    FlexLayoutModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

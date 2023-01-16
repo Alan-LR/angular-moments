@@ -1,8 +1,50 @@
-<div class="container">
+<!--
+    <div class="home-container">
+        <h1>Veja o que estão compartilhando</h1>
+        Form de busca
+        <div *ngIf="moments.length > 0; else noMoments">
+            <div class="moments-container">
+                <div class="moment" *ngFor="let moment of moments">
+                    <img src="{{ imagePath }}uploads/{{ moment.image }}" alt="{{moment.title}}"
+                        style="width: 600px; height: 400px;">
+                    <h3>{{moment.title}}</h3>
+                    <p class="date">Em: {{moment.created_at}}</p>
+                    <p>Comentários: {{ moment.comments!.length }}</p>
+                    <p><a routerLink="moments/{{ moment.id }}">Detalhes</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+ -->
+
+<div class="home-container">
     <h1>Veja o que estão compartilhando</h1>
     <!--Form de busca-->
-    <div *ngFor="let moment of moments">
-        <h2>{{moment.title}}</h2>
+    <div *ngIf="moments.length > 0; else noMoments">
+        <div class="moments-container">
+            <mat-card class="example-card moment" *ngFor="let moment of moments">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>{{moment.title}}</mat-card-title>
+                    <mat-card-subtitle class="date">Em: {{moment.created_at}}</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="{{ imagePath }}uploads/{{ moment.image }}" alt="{{moment.title}}"
+                    class="edit-image">
+                <mat-card-content>
+                    <p>
+                        Comentários: {{ moment.comments!.length }}
+                    </p>
+                    <p><a routerLink="moments/{{ moment.id }}">Detalhes</a></p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                </mat-card-actions>
+            </mat-card>
 
+        </div>
     </div>
+    <ng-template #noMoments>
+        <h2>Não há momentos cadastrados!</h2>
+    </ng-template>
 </div>
