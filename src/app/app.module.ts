@@ -23,6 +23,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MomentComponent } from './components/moment/moment.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 
@@ -36,7 +39,8 @@ import { MomentComponent } from './components/moment/moment.component';
     NewMomentComponent,
     MomentFormComponent,
     MessagesComponent,
-    MomentComponent
+    MomentComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +58,7 @@ import { MomentComponent } from './components/moment/moment.component';
     FontAwesomeModule,
     MatCardModule,
     FlexLayoutModule,
+    MatDialogModule
     
   ],
   providers: [],

@@ -29,7 +29,7 @@ export class NewMomentComponent {
 
     //todo
     //enviar para o service
-    await this.momentService.createMoment(formData).subscribe();
+    this.momentService.createMoment(formData).subscribe();
 
     //exibir msg de sucesso
     this.messageService.add('Momento adicionado com sucesso!')
