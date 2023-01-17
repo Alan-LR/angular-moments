@@ -1,3 +1,25 @@
-<div class="moment">
-    <h1>{{moment.title}}</h1>
+<div class="moment" *ngIf="moment">
+    <mat-card class="example-card moment">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{moment.title}}</mat-card-title>
+            <mat-card-subtitle class="date">Em: {{moment.created_at}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{ imagePath }}uploads/{{ moment.image }}" alt="{{moment.title}}" class="edit-image">
+       
+        <mat-card-actions style="margin-top: 15px;">
+            <button mat-mini-fab color="primary" aria-label="Example icon button with a plus one icon" style="margin-right: 3px;">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-mini-fab color="warn" aria-label="Example icon button with a plus one icon">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </mat-card-actions>
+        <mat-card-content style="margin-top: 20px;">
+            <p>
+                Comentários: {{ moment.comments!.length }}
+            </p>
+        </mat-card-content>
+    </mat-card>
+    <!--Comentários-->
 </div>
