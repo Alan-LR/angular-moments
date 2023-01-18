@@ -23,8 +23,8 @@ export class HomeComponent {
       data.map((item) => {
         item.created_at = new Date(item.created_at!).toLocaleDateString('pt-BR')
       })
-      this.allMoments = data
-      this.moments = data
+      this.allMoments = items.data
+      this.moments = items.data
     });
   }
 

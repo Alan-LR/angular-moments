@@ -1,4 +1,5 @@
 <form (ngSubmit)="submit()" [formGroup]="momentForm" #formDir="ngForm">
+    <input type="hidden" formControlName="id">
     <div class="formulario">
         <mat-form-field appearance="fill">
             <mat-label>Titulo:</mat-label>
