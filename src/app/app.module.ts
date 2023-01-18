@@ -25,6 +25,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MomentComponent } from './components/moment/moment.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { EditMomentComponent } from './components/edit-moment/edit-moment.component';
 
 
 
@@ -40,7 +41,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MomentFormComponent,
     MessagesComponent,
     MomentComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    EditMomentComponent
   ],
   imports: [
     BrowserModule,

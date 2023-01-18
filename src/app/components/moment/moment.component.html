@@ -8,7 +8,7 @@
         <img mat-card-image src="{{ imagePath }}uploads/{{ moment.image }}" alt="{{moment.title}}" class="edit-image">
        
         <mat-card-actions style="margin-top: 15px;">
-            <button mat-mini-fab color="primary" aria-label="Example icon button with a plus one icon" style="margin-right: 3px;">
+            <button mat-mini-fab color="primary" aria-label="Example icon button with a plus one icon" style="margin-right: 3px;" routerLink="/moments/edit/{{moment.id}}">
                 <mat-icon>edit</mat-icon>
             </button>
             <button mat-mini-fab color="warn" aria-label="Example icon button with a plus one icon" (click)="removeHandler(moment.id)">
