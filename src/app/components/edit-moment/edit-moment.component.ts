@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { MessageService } from './../../services/message.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Moment } from './../../interfaces/moment';
@@ -14,6 +15,8 @@ export class EditMomentComponent {
   btnText = 'Salvar';
 
   moment!: Moment
+
+  message: any = '';
 
   constructor(private momentService: MomentService,
     private route: ActivatedRoute, //para pegar o ID que vem da URL
@@ -41,15 +44,25 @@ export class EditMomentComponent {
     if (momentData.image) {
       formData.append("image", momentData.image);
     }
+    
+    (await this.momentService.updateMoment(id!, formData)).subscribe();
+    this.message = this.messageService.add('Momento atualizado com sucesso!');
 
-    //separar as funcionalidades do método em outros métodos e chama-los
-    //esse
-    this.messageService.add('Momento atualizado com sucesso!');
-    //esse
-    this.momentService.updateMoment(id!, formData).subscribe();
-    //esse
-    await this.router.navigate(['/']);
-
+    if(this.moment != momentData){
+      setTimeout(() => {
+        this.router.navigate(['/']);
+      }, 1500);
+    }
   }
+
+  async mensagem(){
+    this.message = this.messageService.add('Momento atualizado com sucesso!');
+    await this.message;
+  }
+
+  async trocarPagina(){
+    this.router.navigate(['/']);
+  }
+
 
 }

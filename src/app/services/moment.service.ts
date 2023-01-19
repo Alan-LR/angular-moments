@@ -32,7 +32,7 @@ export class MomentService {
   }
 
 
-  updateMoment(id: Number, formData: FormData): Observable<FormData>{
+  async updateMoment(id: Number, formData: FormData): Promise<Observable<FormData>>{
     const url = `${this.apiUrl}/${id}`;
     return this.http.put<FormData>(url, formData);
   }

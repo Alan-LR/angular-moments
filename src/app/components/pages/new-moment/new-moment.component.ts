@@ -35,7 +35,9 @@ export class NewMomentComponent {
     this.messageService.add('Momento adicionado com sucesso!')
 
     //redirecionar o usuário após concluir o formulário para outra página
-    this.router.navigate(['/']);
+    setTimeout(() => {
+      this.router.navigate(['/']);
+    }, 1500);
 
   }
 
