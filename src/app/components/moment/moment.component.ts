@@ -1,3 +1,6 @@
+import { Comment } from './../../interfaces/comment';
+import { CommentService } from './../../services/comment.service';
+import { FormGroup, FormControl, Validators, FormGroupDirective } from '@angular/forms';
 import { ConfirmDialogComponent } from './../confirm-dialog/confirm-dialog.component';
 import { MessageService } from './../../services/message.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -16,11 +19,14 @@ export class MomentComponent {
   imagePath: string = "http://localhost:3333/";
   moment?: Moment;
 
+  commentForm!: FormGroup;
+
   constructor(private momentService: MomentService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private messagesService: MessageService,
     public dialog: MatDialog,
+    private commentService: CommentService
   ) { }
 
   ngOnInit() {
@@ -29,6 +35,11 @@ export class MomentComponent {
     this.momentService.getMomentId(id).subscribe((item) => {
       (this.moment = item.data);
       this.moment.created_at = new Date(this.moment.created_at!).toLocaleDateString('pt-BR') //linha convertendo a data para pt-br
+    });
+
+    this.commentForm = new FormGroup({
+      text: new FormControl ('', [Validators.required]),
+      username: new FormControl ('', [Validators.required]),
     })
   }
 
@@ -50,6 +61,22 @@ export class MomentComponent {
     });
   }
 
+  async onSubmit(formDirective: FormGroupDirective){
+    if(this.commentForm.invalid){
+      return
+    }
+
+    const data: Comment = this.commentForm.value
+    data.momentId = Number(this.moment!.id);
+
+    await this.commentService.createComment(data).subscribe((comment) => this.moment!.comments.push(comment.data));
+
+    this.messagesService.add("Comentário adicionado com sucesso!")
+
+    this.commentForm.reset() // limpando formulário de comentário
+    formDirective.resetForm(); // limpando formulário de comentário
+
+  }
 
 
 
